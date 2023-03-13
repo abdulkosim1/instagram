@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.hashers import make_password
 
-
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
@@ -29,7 +28,6 @@ class UserManager(BaseUserManager):
             raise ValueError("Superuser must have is_staff=True.")
         if extra_fields.get("is_superuser") is not True:
             raise ValueError("Superuser must have is_superuser=True.")
-
         return self._create_user(email, password, **extra_fields)
 
 
